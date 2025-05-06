@@ -1,0 +1,33 @@
+smart_urban_farm/
+├── manage.py
+├── smart_farm/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── dashboard/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── templates/
+│       ├── dashboard.html
+│       ├── control.html
+│       └── analytics.html
+├── control/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── views.py
+│   └── templates/
+│       └── control.html
+├── community/
+│   ├── __init__.py
+│   ├── views.py
+│   └── templates/
+│       └── community.html
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── venv/  # Virtual environment folder

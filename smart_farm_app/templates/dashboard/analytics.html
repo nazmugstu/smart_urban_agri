@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Analytics</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <h1>View Analytics</h1>
+    </header>
+    <div class="container">
+        <p>Total Educational Contents: {{ total_contents }}</p>
+        <p>Total Views: {{ total_views }}</p>
+        <p>Total Forum Posts: {{ total_posts }}</p>
+        <h2>Recent Contents</h2>
+        <ul>
+            {% for content in recent_contents %}
+                <li>{{ content.title }} - Views: {{ content.views }}</li>
+            {% endfor %}
+        </ul>
+        <div class="nav-links">
+            <a href="/dashboard/">Back to Dashboard</a>
+        </div>
+    </div>
+    <footer>Powered by xAI</footer>
+</body>
+</html>

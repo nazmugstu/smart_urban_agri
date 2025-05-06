@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Smart Urban Farm</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <h1>Sign Up</h1>
+    </header>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="data-box" style="background-color: #ffebee;">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form method="POST" class="forum-form">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="nav-links">
+            <a href="{% url 'signin' %}">Already have an account? Sign In</a>
+            <a href="{% url 'community' %}">Back to Community</a>
+        </div>
+    </div>
+    <footer>Powered by xAI</footer>
+</body>
+</html>
