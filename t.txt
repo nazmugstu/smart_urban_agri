@@ -5,29 +5,26 @@ smart_urban_farm/
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── dashboard/
+├── smart_farm_app/
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
 │   └── templates/
-│       ├── dashboard.html
-│       ├── control.html
-│       └── analytics.html
-├── control/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── views.py
-│   └── templates/
-│       └── control.html
-├── community/
-│   ├── __init__.py
-│   ├── views.py
-│   └── templates/
-│       └── community.html
+│       ├── smart_farm_app/
+│       │   ├── base.html
+│       │   ├── dashboard.html
+│       │   ├── community.html
+│       │   ├── control.html
+│       │   ├── analytics.html
+│       │   ├── signin.html
+│       │   └── signup.html
 ├── static/
 │   ├── css/
+│   │   └── style.css
 │   ├── js/
+│   │   └── chart.min.js
 │   └── images/
-└── venv/  # Virtual environment folder
+│       └── favicon.ico
+└── venv/

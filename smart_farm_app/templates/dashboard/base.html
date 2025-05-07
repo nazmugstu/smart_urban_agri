@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Urban Farm{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body>
+    <header class="fixed-header">
+        <h1>{% block header_title %}Smart Urban Farm{% endblock %}</h1>
+        <div class="nav-links auth-links" style="position: absolute; top: 20px; right: 20px;">
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}</span>
+                <a href="{% url 'signout' %}" class="btn">Sign Out</a>
+            {% else %}
+                <a href="{% url 'signin' %}" class="btn">Sign In</a>
+                <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block extra_scripts %}
+    {% endblock %}
+</body>
+</html>

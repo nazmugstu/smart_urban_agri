@@ -36,7 +36,7 @@ def signup(request):
 
 def signout(request):
     logout(request)
-    return redirect('community')
+    return redirect('dashboard')  # Changed from 'community' to 'dashboard'
 
 def dashboard(request):
     # Latest sensor data
@@ -76,7 +76,7 @@ def control(request):
             print("Irrigation started!")
     latest_data = SensorData.objects.last()
     devices = Device.objects.all()
-    return render(request, 'control/control.html', {
+    return render(request, 'dashboard/control.html', {
         'latest_data': latest_data,
         'devices': devices,
     })
@@ -112,4 +112,4 @@ def community(request):
                 post = ForumPost.objects.get(id=post_id)
                 ForumReply.objects.create(post=post, user=reply_user, content=reply_content)
                 return redirect('community')
-    return render(request, 'community/community.html', {'resources': resources, 'posts': posts})
+    return render(request, 'dashboard/community.html', {'resources': resources, 'posts': posts})
